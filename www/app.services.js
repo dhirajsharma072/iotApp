@@ -1,5 +1,23 @@
 angular.module('IotDemo')
-    .factory("IotDataStore", ['$http', '$q', function ($http, $q) {
+    .factory("IotDataStore", ['$http', '$q', '$rootScope', function ($http, $q, $rootScope) {
+        var ws = new WebSocket("ws://smart-bed.qa6.tothenew.net:5600/SmartBed/dashboard/sensorData");
+        var ws1 = new WebSocket("ws://smart-bed.qa6.tothenew.net:5600/SmartBed/dashboard/alertData");
+        ws.onopen = function(){
+            console.log("Socket has been opened!");
+        };
+
+        ws.onmessage = function(message) {
+            console.log(JSON.parse(message.data));
+            $rootScope.$broadcast("SensorData", message);
+        };
+        ws1.onopen = function(){
+            console.log("Socket has been opened!");
+        };
+
+        ws1.onmessage = function(message) {
+            console.log(JSON.parse(message.data));
+            $rootScope.$broadcast("AlertData", message);
+        };
         return {
             login : function () {
                 var deferred = $q.defer();
