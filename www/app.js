@@ -62,11 +62,4 @@ angular.module('IotDemo', [])
             };
             IotDataStore.stopToy(IotCtrl.login.value).then(success, error);
         };
-
-        $rootScope.$on('SensorData', function (msg) {
-            console.log('inside sensorData listener:::::::::::', msg);
-        });
-        $rootScope.$on('AlertData', function (msg) {
-            console.log('inside AlertData listener:::::::::::', msg);
-        });
   });
