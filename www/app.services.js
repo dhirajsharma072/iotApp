@@ -39,9 +39,6 @@ angular.module('IotDemo')
             deleteEmergencyContactDetails : function () {
 
             },
-            getSensorData : function () {
-
-            },
             getAllPhotos : function (token) {
                 var deferred = $q.defer();
                 $http.get('http://smart-bed.qa6.tothenew.net/SmartBed/photo/getAllPhotos', {
