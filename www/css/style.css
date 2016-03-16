@@ -1,1 +1,132 @@
 /* Empty. Add your own CSS if you like */
+body, p {
+  margin: 0;
+}
+h1 {
+  font-size: 20px;
+}
+.np {
+  padding: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.temp, .mois {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.54);
+  background: #1a90b8;
+  border: 1px solid #1a90b8;
+  padding: 18px;
+  color: #FFFFFF;
+}
+.mois {
+  background: #00a79d;
+  border: 1px solid #00a79d;
+}
+
+.sensors > li {
+  margin: 10px 0;
+  width: 49%;
+}
+.sensors > li:nth-of-type(2n+1) {
+  margin-right: 2% !important;
+}
+.sensors {
+  overflow: hidden;
+  clear: both;
+}
+
+.sos {
+  float: right;
+  margin: 20px 15px 10px 0;
+  border-radius: 18px;
+  width: 75px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.54);
+}
+
+.notification {
+  padding-top: 15px;
+  box-shadow: 0 0 10px #ddd;
+}
+.notification li {
+  background: #f0f0f0;
+}
+
+[class*=icon]:before {
+  background: url("../img/sprite.png") 0 0 no-repeat;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  content: '';
+}
+.icon-1:before {
+  background-position: -5px -5px;
+  width: 18px;
+}
+
+.icon-2:before {
+  background-position: -32px -44px;
+}
+
+.icon-3:before {
+  background-position: -30px 3px;
+}
+
+.icon-4:before {
+  background: white url("../img/sprite.png") no-repeat;
+  background-position: -5px -93px;
+}
+
+.li-content {
+  display: block;
+}
+.li-content span {
+  display: block;
+}
+em {
+  font-style: normal;
+  padding-left: 5px;
+  color: #d8ff86;
+}
+@media screen and (min-width: 767px) {
+  .li-content {
+    float: right;
+  }
+
+  [class*=icon]:before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+  }
+  .col-md-6 {
+    width: 49%;
+  }
+  .gallery {
+    margin-right: 2%;
+  }
+}
+
+.gallery {
+  padding: 0;
+}
+
+.thumb {
+  margin-bottom: 0;
+  padding: 0 7.5px;
+}
+
+.btn-mrgn{
+  margin:-15px 0 15px 0;
+}
+
+.row {
+  margin: 0;
+  clear: both;
+}
+.capture-image {
+  margin-bottom: 20px;
+}
