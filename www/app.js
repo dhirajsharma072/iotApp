@@ -62,4 +62,24 @@ angular.module('IotDemo', [])
             };
             IotDataStore.stopToy(IotCtrl.login.value).then(success, error);
         };
+
+        IotCtrl.deleteEmergencyContactDetails = function (contactId) {
+            var success = function (res) {
+                console.log('inside success of delete emergency contact details : ', res);
+            };
+            var error = function (err) {
+                console.error('error while deleting contact details : ', err);
+            };
+            IotDataStore.deleteEmergencyContactDetails(IotCtrl.login.value, contactId).then(success, error);
+        };
+
+        IotCtrl.getEmergencyContactDetails = function (contactId) {
+            var success = function (res) {
+                console.log('inside success of get emergency contact details : ', res);
+            };
+            var error = function (err) {
+                console.error('error while getting contact details : ', err);
+            };
+            IotDataStore.getEmergencyContactDetails(IotCtrl.login.value, contactId).then(success, error);
+        };
   });

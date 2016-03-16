@@ -30,14 +30,38 @@ angular.module('IotDemo')
                     });
                return deferred.promise;
             },
-            getEmergencyContactDetails : function () {
+            getEmergencyContactDetails : function (token) {
+                var deferred = $q.defer();
+                $http.get('http://localhost:8080/SmartBed/emergencyContacts', {
+                    headers: {
+                        Authorization: 'Bearer ' + token
+                    }
+                })
+                    .success(function (response) {
+                        return deferred.resolve(response);
+                    })
+                    .error(function (err) {
+                        return  deferred.reject(err);
+                    });
+                return deferred.promise;
+            },
+            addContactDetails : function () {
 
             },
-            updateEmergencyContactDetails : function () {
-
-            },
-            deleteEmergencyContactDetails : function () {
-
+            deleteEmergencyContactDetails : function (token, contactId) {
+                var deferred = $q.defer();
+                $http.get('http://localhost:8080/SmartBed/emergencyContacts/' + contactId + '/deleteContact', {
+                    headers: {
+                        Authorization: 'Bearer ' + token
+                    }
+                })
+                    .success(function (response) {
+                        return deferred.resolve(response);
+                    })
+                    .error(function (err) {
+                        return  deferred.reject(err);
+                    });
+                return deferred.promise;
             },
             getAllPhotos : function (token) {
                 var deferred = $q.defer();
